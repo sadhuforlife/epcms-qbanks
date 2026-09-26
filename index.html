@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>EPCMS — Qbanks / Tests</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 50% 0%,
+                    rgba(59, 130, 246, 0.12),
+                    transparent 35%),
+                #f8fafc;
+
+            color: #0f172a;
+            padding: 0 18px 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* ---------------- HEADER ---------------- */
+
+        .hero {
+            text-align: center;
+            padding: 55px 10px 35px;
+        }
+
+        .group-image {
+            width: 112px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 28px;
+
+            display: block;
+            margin: 0 auto 22px;
+
+            box-shadow:
+                0 12px 30px rgba(15, 23, 42, 0.16);
+
+            border: 4px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .title {
+            font-size: clamp(38px, 8vw, 58px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .maintained {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .profile {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 6px 12px 6px 6px;
+
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.07);
+        }
+
+        .profile img {
+            width: 31px;
+            height: 31px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .username {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        /* ---------------- SECTION ---------------- */
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            margin: 18px 2px 15px;
+        }
+
+        .section-title {
+            font-size: 25px;
+            font-weight: 750;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* ---------------- TEST LIST ---------------- */
+
+        .test-list {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .test-card {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            min-height: 68px;
+
+            padding: 10px 16px 10px 12px;
+
+            text-decoration: none;
+            color: inherit;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+
+            box-shadow:
+                0 3px 12px rgba(15, 23, 42, 0.045);
+
+            transition:
+                transform 0.18s ease,
+                box-shadow 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .test-card:hover {
+            transform: translateY(-2px);
+
+            border-color: #cbd5e1;
+
+            box-shadow:
+                0 9px 24px rgba(15, 23, 42, 0.09);
+        }
+
+        .test-card:active {
+            transform: scale(0.985);
+        }
+
+        .number {
+            width: 43px;
+            height: 43px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #f1f5f9;
+            color: #475569;
+
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        .test-name {
+            flex: 1;
+
+            margin-left: 14px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            color: #1e293b;
+
+            overflow-wrap: anywhere;
+        }
+
+        .arrow {
+            margin-left: 12px;
+
+            color: #94a3b8;
+            font-size: 21px;
+            font-weight: 400;
+
+            transition: transform 0.18s ease;
+        }
+
+        .test-card:hover .arrow {
+            transform: translateX(3px);
+            color: #475569;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        .footer {
+            text-align: center;
+
+            margin-top: 45px;
+
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .footer strong {
+            color: #64748b;
+            font-weight: 650;
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-left: 13px;
+                padding-right: 13px;
+            }
+
+            .hero {
+                padding-top: 35px;
+                padding-bottom: 28px;
+            }
+
+            .group-image {
+                width: 94px;
+                height: 94px;
+                border-radius: 24px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .test-card {
+                min-height: 64px;
+                border-radius: 14px;
+            }
+
+            .number {
+                width: 40px;
+                height: 40px;
+                border-radius: 11px;
+            }
+
+            .test-name {
+                font-size: 15px;
+                margin-left: 12px;
+            }
+        }
+
+        /* ---------------- DARK MODE ---------------- */
+
+        @media (prefers-color-scheme: dark) {
+
+            body {
+                background:
+                    radial-gradient(circle at 50% 0%,
+                        rgba(59, 130, 246, 0.13),
+                        transparent 35%),
+                    #0b1120;
+
+                color: #f8fafc;
+            }
+
+            .maintained {
+                color: #94a3b8;
+            }
+
+            .profile {
+                background: #111827;
+                border-color: #1e293b;
+            }
+
+            .username {
+                color: #cbd5e1;
+            }
+
+            .section-subtitle {
+                color: #64748b;
+            }
+
+            .test-card {
+                background: rgba(17, 24, 39, 0.9);
+                border-color: #1e293b;
+            }
+
+            .test-card:hover {
+                border-color: #334155;
+            }
+
+            .number {
+                background: #1e293b;
+                color: #cbd5e1;
+            }
+
+            .test-name {
+                color: #e2e8f0;
+            }
+
+            .arrow {
+                color: #64748b;
+            }
+
+            .footer {
+                color: #64748b;
+            }
+
+            .footer strong {
+                color: #94a3b8;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="hero">
+
+        <img
+            src="group.jpg"
+            alt="EPCMS Group"
+            class="group-image"
+        >
+
+        <h1 class="title">EPCMS</h1>
+
+        <p class="maintained">
+            maintained by
+        </p>
+
+        <div class="profile">
+
+            <img
+                src="dp.jpg"
+                alt="@sadhu_4l"
+            >
+
+            <span class="username">
+                @sadhu_4l
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= TEST INDEX ================= -->
+
+    <main>
+
+        <div class="section-header">
+
+            <div>
+                <h2 class="section-title">
+                    Qbanks / Tests
+                </h2>
+
+                <p class="section-subtitle">
+                    Select a test to begin
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="test-list">
+
+            <!-- TEST 01 -->
+            <a href="#" class="test-card">
+
+                <span class="number">01</span>
+
+                <span class="test-name">
+                    DAMS All Tests
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- TEST 02 -->
+            <a href="#" class="test-card">
+
+                <span class="number">02</span>
+
+                <span class="test-name">
+                    Marrow
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- TEST 03 -->
+            <a href="#" class="test-card">
+
+                <span class="number">03</span>
+
+                <span class="test-name">
+                    CoreBTR
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- TEST 04 -->
+            <a href="#" class="test-card">
+
+                <span class="number">04</span>
+
+                <span class="test-name">
+                    Surgery
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- TEST 05 -->
+            <a href="#" class="test-card">
+
+                <span class="number">05</span>
+
+                <span class="test-name">
+                    Medicine
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+        <strong>EPCMS</strong> · Qbanks / Tests
+    </footer>
+
+</div>
+
+</body>
+</html>
