@@ -1,143 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>EPCMS Qbanks</title>
 
+
 <style>
-    * {
-        box-sizing: border-box;
-    }
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #243b55,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #141e30,
+            transparent 45%
+        ),
+        #090d16;
+
+    padding: 30px 18px;
+}
+
+
+.container {
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.group-logo {
+
+    width: 95px;
+
+    height: 95px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.45);
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    margin: 5px 0;
+
+    font-size: 32px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.subtitle {
+
+    color: #aeb8c7;
+
+    font-size: 15px;
+}
+
+
+/* QUIZ LIST */
+
+.quiz-list {
+
+    display: grid;
+
+    gap: 14px;
+}
+
+
+.quiz-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 18px 20px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.quiz-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+.quiz-name {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+.open {
+
+    flex-shrink: 0;
+
+    color: #9fc5ff;
+
+    font-size: 14px;
+}
+
+
+/* LOADING */
+
+.loading {
+
+    text-align: center;
+
+    color: #aeb8c7;
+
+    padding: 30px;
+}
+
+
+.error {
+
+    text-align: center;
+
+    color: #ff9b9b;
+
+    padding: 30px;
+
+    line-height: 1.6;
+}
+
+
+/* BACK BUTTON */
+
+.back {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #aeb8c7;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.back:hover {
+
+    color: white;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 40px;
+
+    color: #778194;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
 
     body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-        color: white;
-        background:
-            radial-gradient(circle at top left, #243b55, transparent 40%),
-            radial-gradient(circle at bottom right, #141e30, transparent 45%),
-            #090d16;
-        padding: 30px 18px;
-    }
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .header {
-        text-align: center;
-        margin-bottom: 35px;
-    }
-
-    .group-logo {
-        width: 95px;
-        height: 95px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid rgba(255,255,255,0.25);
-        box-shadow: 0 10px 35px rgba(0,0,0,0.45);
-        margin-bottom: 15px;
+        padding:
+            25px 15px;
     }
 
     h1 {
-        margin: 5px 0;
-        font-size: 32px;
-    }
 
-    .subtitle {
-        color: #aeb8c7;
-        font-size: 15px;
-    }
-
-    .quiz-list {
-        display: grid;
-        gap: 14px;
+        font-size: 29px;
     }
 
     .quiz-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
 
-        padding: 18px 20px;
-
-        text-decoration: none;
-        color: white;
-
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 16px;
-
-        backdrop-filter: blur(12px);
-
-        transition: 0.2s ease;
+        padding:
+            16px;
     }
 
-    .quiz-card:hover {
-        transform: translateY(-2px);
-        background: rgba(255,255,255,0.12);
-    }
+}
 
-    .quiz-name {
-        font-size: 16px;
-        font-weight: 600;
-        word-break: break-word;
-    }
-
-    .open {
-        flex-shrink: 0;
-        color: #9fc5ff;
-        font-size: 14px;
-    }
-
-    .loading {
-        text-align: center;
-        color: #aeb8c7;
-        padding: 30px;
-    }
-
-    .error {
-        text-align: center;
-        color: #ff9b9b;
-        padding: 30px;
-        line-height: 1.6;
-    }
-
-    .back {
-        display: inline-block;
-        margin-top: 30px;
-        color: #aeb8c7;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .back:hover {
-        color: white;
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        color: #778194;
-        font-size: 13px;
-    }
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
+
+
+    <!-- HEADER -->
 
     <div class="header">
 
-        <img src="group.jpg" class="group-logo">
+        <img
+            src="./group.jpg"
+            class="group-logo"
+            alt="EPCMS"
+        >
 
-        <h1 id="categoryTitle">Qbanks</h1>
+        <h1 id="categoryTitle">
+            Qbanks
+        </h1>
 
         <div class="subtitle">
             EPCMS • Qbanks / Tests
@@ -145,7 +289,13 @@
 
     </div>
 
-    <div id="quizList" class="quiz-list">
+
+    <!-- QUIZ LIST -->
+
+    <div
+        id="quizList"
+        class="quiz-list"
+    >
 
         <div class="loading">
             Loading quizzes...
@@ -153,23 +303,57 @@
 
     </div>
 
-    <a href="./index.html" class="back">
+
+    <!-- BACK -->
+
+    <a
+        href="./index.html"
+        class="back"
+    >
         ← Back to EPCMS
     </a>
 
+
+    <!-- FOOTER -->
+
     <footer>
+
         EPCMS • Maintained by @sadhu_4l
+
     </footer>
+
 
 </div>
 
 
+
 <script>
 
-const params = new URLSearchParams(window.location.search);
 
-const category = params.get("category");
+/*
+    GET CATEGORY FROM URL
 
+    Example:
+
+    category.html?category=DAMS
+
+    category.html?category=MARROW
+*/
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const category =
+    params.get("category");
+
+
+
+/*
+    DISPLAY NAMES
+*/
 
 const categoryNames = {
 
@@ -186,14 +370,31 @@ const categoryNames = {
 };
 
 
-const title = categoryNames[category] || category || "Qbanks";
 
-document.getElementById("categoryTitle").textContent = title;
+/*
+    SET PAGE TITLE
+*/
 
+document
+    .getElementById("categoryTitle")
+    .textContent =
+        categoryNames[category]
+        || category
+        || "Qbanks";
+
+
+
+/*
+    LOAD QUIZZES
+*/
 
 async function loadQuizzes() {
 
-    const list = document.getElementById("quizList");
+
+    const list =
+        document.getElementById(
+            "quizList"
+        );
 
 
     if (!category) {
@@ -208,13 +409,23 @@ async function loadQuizzes() {
     }
 
 
+
     try {
 
+
+        /*
+            ASK GITHUB API
+            FOR FOLDER CONTENTS
+        */
+
         const apiURL =
-            `https://api.github.com/repos/sadhuforlife/epcms-qbanks/contents/${encodeURIComponent(category)}`;
+            "https://api.github.com/repos/" +
+            "sadhuforlife/epcms-qbanks/contents/" +
+            encodeURIComponent(category);
 
 
-        const response = await fetch(apiURL);
+        const response =
+            await fetch(apiURL);
 
 
         if (!response.ok) {
@@ -226,25 +437,43 @@ async function loadQuizzes() {
         }
 
 
-        const files = await response.json();
+        const files =
+            await response.json();
 
 
-        const quizzes = files
-            .filter(file =>
-                file.type === "file" &&
-                file.name.toLowerCase().endsWith(".html")
-            )
-            .sort((a, b) =>
-                a.name.localeCompare(
-                    b.name,
-                    undefined,
-                    {
-                        numeric: true,
-                        sensitivity: "base"
-                    }
+
+        /*
+            ONLY HTML FILES
+        */
+
+        const quizzes =
+            files
+
+                .filter(
+                    file =>
+                        file.type === "file" &&
+                        file.name
+                            .toLowerCase()
+                            .endsWith(".html")
                 )
-            );
 
+                .sort(
+                    (a, b) =>
+                        a.name.localeCompare(
+                            b.name,
+                            undefined,
+                            {
+                                numeric: true,
+                                sensitivity: "base"
+                            }
+                        )
+                );
+
+
+
+        /*
+            NO QUIZZES
+        */
 
         if (quizzes.length === 0) {
 
@@ -258,33 +487,99 @@ async function loadQuizzes() {
         }
 
 
+
+        /*
+            CLEAR LOADING
+        */
+
         list.innerHTML = "";
 
 
+
+        /*
+            CREATE EACH QUIZ BUTTON
+        */
+
         quizzes.forEach(file => {
 
-            const card = document.createElement("a");
 
-            card.className = "quiz-card";
+            const card =
+                document.createElement("a");
+
+
+            card.className =
+                "quiz-card";
+
+
+            /*
+                IMPORTANT:
+
+                GitHub Pages project URL is:
+
+                /epcms-qbanks/
+
+                So we explicitly construct
+                the complete Pages path.
+            */
+
+            const quizURL =
+                "/epcms-qbanks/" +
+                category +
+                "/" +
+                encodeURIComponent(
+                    file.name
+                );
+
 
             card.href =
-                `./${category}/${encodeURIComponent(file.name)}`;
+                quizURL;
 
 
-            const name = document.createElement("div");
 
-            name.className = "quiz-name";
+            /*
+                QUIZ NAME
+            */
+
+            const name =
+                document.createElement(
+                    "div"
+                );
+
+
+            name.className =
+                "quiz-name";
+
 
             name.textContent =
-                file.name.replace(/\.html$/i, "");
+                file.name.replace(
+                    /\.html$/i,
+                    ""
+                );
 
 
-            const open = document.createElement("div");
 
-            open.className = "open";
+            /*
+                OPEN TEXT
+            */
 
-            open.textContent = "Open →";
+            const open =
+                document.createElement(
+                    "div"
+                );
 
+
+            open.className =
+                "open";
+
+
+            open.textContent =
+                "Open →";
+
+
+
+            /*
+                ADD TO CARD
+            */
 
             card.appendChild(name);
 
@@ -294,18 +589,28 @@ async function loadQuizzes() {
 
         });
 
+
     }
 
     catch (error) {
+
 
         console.error(error);
 
 
         list.innerHTML = `
+
             <div class="error">
-                Unable to load the quiz list.<br><br>
-                Please try again in a moment.
+
+                Unable to load the quiz list.
+
+                <br><br>
+
+                Please refresh the page
+                and try again.
+
             </div>
+
         `;
 
     }
@@ -313,9 +618,12 @@ async function loadQuizzes() {
 }
 
 
+
 loadQuizzes();
 
 </script>
 
+
 </body>
+
 </html>
