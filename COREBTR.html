@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>COREBTR | EPCMS</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -13,12 +18,16 @@
 body {
     margin: 0;
     min-height: 100vh;
+
     font-family: Arial, Helvetica, sans-serif;
+
     background:
         radial-gradient(circle at top left, #182848, transparent 45%),
         radial-gradient(circle at bottom right, #301b3f, transparent 45%),
         #080b12;
+
     color: white;
+
     padding: 30px 18px;
 }
 
@@ -35,58 +44,91 @@ body {
 .logo {
     width: 90px;
     height: 90px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     border: 3px solid rgba(255,255,255,0.25);
+
     margin-bottom: 15px;
 }
 
 h1 {
     margin: 5px 0;
+
     font-size: 34px;
+
     letter-spacing: 2px;
 }
 
 .subtitle {
     color: #aeb7c8;
+
     font-size: 15px;
 }
 
-.card {
+.quiz-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.quiz {
+    display: block;
+
+    text-decoration: none;
+
+    color: white;
+
     background: rgba(255,255,255,0.07);
+
     border: 1px solid rgba(255,255,255,0.12);
+
     border-radius: 18px;
+
     padding: 20px;
-    margin-bottom: 15px;
+
     backdrop-filter: blur(12px);
+
     transition: 0.2s;
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.10);
+.quiz:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,0.11);
 }
 
-.card a {
-    color: white;
-    text-decoration: none;
+.quiz-name {
     font-size: 17px;
+
     font-weight: bold;
-    display: block;
+
+    line-height: 1.4;
 }
 
 .empty {
     text-align: center;
+
     color: #8f99aa;
-    padding: 30px 10px;
+
+    padding: 30px;
 }
 
 .back {
     display: block;
+
     text-align: center;
+
     margin-top: 30px;
+
     color: #aeb7c8;
+
     text-decoration: none;
+
     font-size: 15px;
 }
 
@@ -96,37 +138,115 @@ h1 {
 
 .footer {
     text-align: center;
+
     margin-top: 35px;
+
     color: #697386;
+
     font-size: 13px;
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <div class="header">
-        <img src="group.jpg" class="logo" alt="EPCMS">
 
-        <h1>COREBTR</h1>
-        <div class="subtitle">Qbanks / Tests</div>
-    </div>
+<div class="header">
 
-    <div class="card empty">
-        No tests added yet.
-    </div>
+<img
+    src="group.jpg"
+    class="logo"
+    alt="EPCMS"
+>
 
-    <a class="back" href="./index.html">
-        ← Back to EPCMS
-    </a>
+<h1>COREBTR</h1>
 
-    <div class="footer">
-        Maintained by @sadhu_4l
-    </div>
+<div class="subtitle">
+Qbanks / Tests
+</div>
 
 </div>
 
+
+<div
+    id="quizList"
+    class="quiz-list"
+></div>
+
+
+<a
+    class="back"
+    href="./index.html"
+>
+← Back to EPCMS
+</a>
+
+
+<div class="footer">
+
+EPCMS • Maintained by @sadhu_4l
+
+</div>
+
+
+</div>
+
+
+<script src="./tests.js"></script>
+
+
+<script>
+
+const category = "COREBTR";
+
+const list =
+    document.getElementById("quizList");
+
+const items =
+    quizzes[category] || [];
+
+
+if (items.length === 0) {
+
+    list.innerHTML = `
+        <div class="quiz empty">
+            No tests added yet.
+        </div>
+    `;
+
+} else {
+
+    items.forEach(test => {
+
+        const link =
+            document.createElement("a");
+
+        link.className = "quiz";
+
+        link.href =
+            "./COREBTR/" + test.file;
+
+        link.innerHTML = `
+            <div class="quiz-name">
+                ${test.name}
+            </div>
+        `;
+
+        list.appendChild(link);
+
+    });
+
+}
+
+</script>
+
+
 </body>
+
 </html>

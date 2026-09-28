@@ -1,162 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
 <title>DAMS | EPCMS</title>
 
 <style>
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(99,102,241,.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(14,165,233,.14), transparent 32%),
-        #0b1020;
-    color: white;
+
+    margin: 0;
+
     min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #182848,
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #301b3f,
+            transparent 45%
+        ),
+
+        #080b12;
+
+    color: white;
+
+    padding: 30px 18px;
 }
 
 .container {
-    width: min(92%, 720px);
+
+    max-width: 850px;
+
     margin: auto;
-    padding: 28px 0 50px;
-}
-
-.back {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: #aeb8d4;
-    text-decoration: none;
-    font-size: 14px;
-    margin-bottom: 28px;
-}
-
-.back:hover {
-    color: white;
 }
 
 .header {
+
     text-align: center;
-    margin-bottom: 30px;
+
+    margin-bottom: 35px;
 }
 
-.icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 15px;
-    border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.1);
+.logo {
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.25);
+
+    margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 31px;
-    letter-spacing: .5px;
+
+    margin: 5px 0;
+
+    font-size: 34px;
+
+    letter-spacing: 2px;
 }
 
 .subtitle {
-    color: #8f9bb8;
-    margin-top: 7px;
-    font-size: 14px;
-}
 
-.tests {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
+    color: #aeb7c8;
 
-.test {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    padding: 17px 18px;
-    border-radius: 15px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.09);
-    transition: .2s ease;
-}
-
-.test:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,.11);
-}
-
-.number {
-    min-width: 40px;
-    color: #7f8bab;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.test-name {
-    flex: 1;
     font-size: 15px;
-    font-weight: 600;
-    word-break: break-word;
 }
 
-.arrow {
-    color: #7f8bab;
-    font-size: 23px;
-    margin-left: 10px;
+.quiz-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.quiz {
+
+    display: block;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.2s;
+}
+
+.quiz:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.11);
+}
+
+.quiz-name {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
 }
 
 .empty {
+
     text-align: center;
-    color: #737f9c;
-    padding: 30px 10px;
-    font-size: 14px;
+
+    color: #8f99aa;
+
+    padding: 30px;
+}
+
+.back {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #aeb7c8;
+
+    text-decoration: none;
+
+    font-size: 15px;
+}
+
+.back:hover {
+
+    color: white;
 }
 
 .footer {
+
     text-align: center;
+
     margin-top: 35px;
-    color: #66718d;
-    font-size: 12px;
+
+    color: #697386;
+
+    font-size: 13px;
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <a href="index.html" class="back">← Back to EPCMS</a>
 
-    <header class="header">
-        <div class="icon">🩺</div>
-        <h1>DAMS</h1>
-        <div class="subtitle">Qbanks & Tests</div>
-    </header>
+<div class="header">
 
-    <div class="tests">
+<img
+    src="group.jpg"
+    class="logo"
+    alt="EPCMS"
+>
 
-        <a href="./DAMS.html/DQB_-_GOAT_with_video_solutions.html" class="test">
-            <div class="number">01</div>
-            <div class="test-name">DQB_-_GOAT_with_video_solutions</div>
-            <div class="arrow">›</div>
-        </a>
+<h1>DAMS</h1>
 
-    </div>
-
-    <div class="footer">
-        EPCMS • DAMS
-    </div>
+<div class="subtitle">
+Qbanks / Tests
+</div>
 
 </div>
 
+
+<div
+    id="quizList"
+    class="quiz-list"
+></div>
+
+
+<a
+    class="back"
+    href="./index.html"
+>
+← Back to EPCMS
+</a>
+
+
+<div class="footer">
+
+EPCMS • Maintained by @sadhu_4l
+
+</div>
+
+
+</div>
+
+
+<script src="./tests.js"></script>
+
+
+<script>
+
+const category = "DAMS";
+
+const list =
+    document.getElementById("quizList");
+
+const items =
+    quizzes[category] || [];
+
+
+if (items.length === 0) {
+
+    list.innerHTML = `
+        <div class="quiz empty">
+            No tests added yet.
+        </div>
+    `;
+
+} else {
+
+    items.forEach(test => {
+
+        const link =
+            document.createElement("a");
+
+        link.className = "quiz";
+
+        link.href =
+            "./DAMS/" + test.file;
+
+        link.innerHTML = `
+            <div class="quiz-name">
+                ${test.name}
+            </div>
+        `;
+
+        list.appendChild(link);
+
+    });
+
+}
+
+</script>
+
+
 </body>
+
 </html>

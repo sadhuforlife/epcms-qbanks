@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EPCMS | Qbanks & Tests</title>
+<title>EPCMS Qbanks</title>
 
 <style>
 
@@ -15,21 +15,19 @@
 body {
     margin: 0;
     min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    color: white;
 
     background:
-        radial-gradient(circle at top left, #182848, transparent 45%),
-        radial-gradient(circle at bottom right, #301b3f, transparent 45%),
-        #080b12;
-
-    color: white;
+        radial-gradient(circle at top left, #243b55, transparent 40%),
+        radial-gradient(circle at bottom right, #141e30, transparent 45%),
+        #090d16;
 
     padding: 30px 18px;
 }
 
 .container {
-    max-width: 850px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -37,213 +35,195 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .group-logo {
-    width: 110px;
-    height: 110px;
-
-    border-radius: 50%;
-
+    width: 105px;
+    height: 105px;
     object-fit: cover;
 
+    border-radius: 50%;
     border: 3px solid rgba(255,255,255,0.25);
 
-    margin-bottom: 15px;
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.45);
 
-    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
 }
 
 h1 {
     margin: 5px 0;
 
-    font-size: 42px;
-
-    letter-spacing: 4px;
+    font-size: 38px;
+    letter-spacing: 1px;
 }
 
 .subtitle {
-    color: #aeb7c8;
-
+    color: #aeb8c7;
     font-size: 16px;
-
-    margin-top: 8px;
 }
 
 /* MAINTAINER */
 
 .maintainer {
     display: flex;
-
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     gap: 10px;
 
     margin-top: 18px;
 
-    color: #aeb7c8;
-
+    color: #aeb8c7;
     font-size: 14px;
 }
 
 .dp {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
 
     border-radius: 50%;
-
     object-fit: cover;
 
-    border: 2px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* CATEGORY CARDS */
+/* CATEGORY GRID */
 
 .categories {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap: 16px;
-
-    margin-top: 30px;
+    gap: 18px;
 }
+
+/* CATEGORY CARD */
 
 .category {
     display: block;
 
     text-decoration: none;
-
     color: white;
 
-    background: rgba(255,255,255,0.07);
+    padding: 25px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    min-height: 125px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid rgba(255,255,255,0.11);
 
     border-radius: 20px;
 
-    padding: 25px 20px;
+    backdrop-filter: blur(14px);
 
-    text-align: center;
-
-    backdrop-filter: blur(12px);
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.20);
 
     transition:
         transform 0.2s ease,
         background 0.2s ease,
-        border 0.2s ease;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        box-shadow 0.2s ease;
 }
 
 .category:hover {
+    transform: translateY(-4px);
 
-    transform: translateY(-5px);
+    background:
+        rgba(255,255,255,0.12);
 
-    background: rgba(255,255,255,0.11);
-
-    border-color: rgba(255,255,255,0.25);
-
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.35);
 }
 
 .category-icon {
-
     font-size: 30px;
-
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .category-name {
-
-    font-size: 19px;
-
+    font-size: 21px;
     font-weight: bold;
 
-    letter-spacing: 1px;
+    margin-bottom: 7px;
 }
 
-.category-subtitle {
-
-    margin-top: 7px;
-
+.category-description {
     font-size: 13px;
-
-    color: #8f99aa;
+    color: #9da8ba;
 }
 
 /* FOOTER */
 
-.footer {
-
+footer {
     text-align: center;
 
-    margin-top: 40px;
+    margin-top: 45px;
 
-    color: #697386;
+    color: #778194;
 
     font-size: 13px;
 }
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     body {
-        padding: 25px 15px;
+        padding:
+            25px 15px;
     }
 
     h1 {
-        font-size: 34px;
-    }
-
-    .group-logo {
-        width: 95px;
-        height: 95px;
+        font-size: 32px;
     }
 
     .categories {
-
         grid-template-columns: 1fr;
-
-        gap: 13px;
     }
 
     .category {
-
-        padding: 21px 18px;
+        min-height: 110px;
     }
 }
 
 </style>
-
 </head>
+
 
 <body>
 
 <div class="container">
+
 
     <!-- HEADER -->
 
     <div class="header">
 
         <img
-            src="group.jpg"
+            src="./group.jpg"
             class="group-logo"
             alt="EPCMS"
         >
 
-        <h1>EPCMS</h1>
+        <h1>
+            EPCMS
+        </h1>
 
         <div class="subtitle">
             Qbanks / Tests
         </div>
 
+
         <div class="maintainer">
 
             <img
-                src="dp.jpg"
+                src="./dp.jpg"
                 class="dp"
                 alt="Maintainer"
             >
@@ -257,15 +237,17 @@ h1 {
     </div>
 
 
+
     <!-- CATEGORIES -->
 
     <div class="categories">
 
+
         <!-- DAMS -->
 
         <a
+            href="./category.html?category=DAMS"
             class="category"
-            href="./DAMS.html"
         >
 
             <div class="category-icon">
@@ -276,18 +258,19 @@ h1 {
                 DAMS
             </div>
 
-            <div class="category-subtitle">
-                Qbanks & Tests
+            <div class="category-description">
+                DAMS Qbanks & Tests
             </div>
 
         </a>
 
 
+
         <!-- MARROW -->
 
         <a
+            href="./category.html?category=MARROW"
             class="category"
-            href="./MARROW.html"
         >
 
             <div class="category-icon">
@@ -295,43 +278,45 @@ h1 {
             </div>
 
             <div class="category-name">
-                MARROW
+                Marrow
             </div>
 
-            <div class="category-subtitle">
-                Qbanks & Tests
+            <div class="category-description">
+                Marrow Qbanks & Tests
             </div>
 
         </a>
+
 
 
         <!-- PREPLADDER -->
 
         <a
+            href="./category.html?category=PREPLADDER"
             class="category"
-            href="./PREPLADDER.html"
         >
 
             <div class="category-icon">
-                🎓
+                📝
             </div>
 
             <div class="category-name">
-                PREPLADDER
+                PrepLadder
             </div>
 
-            <div class="category-subtitle">
-                Qbanks & Tests
+            <div class="category-description">
+                PrepLadder Qbanks & Tests
             </div>
 
         </a>
 
 
+
         <!-- CEREBELLUM -->
 
         <a
+            href="./category.html?category=CEREBELLUM"
             class="category"
-            href="./CEREBELLUM.html"
         >
 
             <div class="category-icon">
@@ -339,21 +324,22 @@ h1 {
             </div>
 
             <div class="category-name">
-                CEREBELLUM
+                Cerebellum
             </div>
 
-            <div class="category-subtitle">
-                Qbanks & Tests
+            <div class="category-description">
+                Cerebellum Qbanks & Tests
             </div>
 
         </a>
 
 
+
         <!-- COREBTR -->
 
         <a
+            href="./category.html?category=COREBTR"
             class="category"
-            href="./COREBTR.html"
         >
 
             <div class="category-icon">
@@ -361,25 +347,32 @@ h1 {
             </div>
 
             <div class="category-name">
-                COREBTR
+                CoreBTR
             </div>
 
-            <div class="category-subtitle">
-                Qbanks & Tests
+            <div class="category-description">
+                CoreBTR Qbanks & Tests
             </div>
 
         </a>
 
+
     </div>
+
 
 
     <!-- FOOTER -->
 
-    <div class="footer">
+    <footer>
 
         EPCMS • Qbanks / Tests
 
-    </div>
+        <br><br>
+
+        Maintained by @sadhu_4l
+
+    </footer>
+
 
 </div>
 
