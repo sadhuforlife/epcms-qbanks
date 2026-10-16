@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>EPCMS Qbanks</title>
+
 
 <style>
 
@@ -12,63 +19,108 @@
     box-sizing: border-box;
 }
 
+
 body {
+
     margin: 0;
+
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     color: white;
 
     background:
-        radial-gradient(circle at top left, #243b55, transparent 40%),
-        radial-gradient(circle at bottom right, #141e30, transparent 45%),
+        radial-gradient(
+            circle at top left,
+            #243b55,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #141e30,
+            transparent 45%
+        ),
+
         #090d16;
 
     padding: 30px 18px;
 }
 
+
 .container {
+
+    width: 100%;
+
     max-width: 1000px;
+
     margin: auto;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 .header {
+
     text-align: center;
-    margin-bottom: 40px;
+
+    margin-bottom: 42px;
 }
 
+
 .group-logo {
+
     width: 105px;
+
     height: 105px;
+
     object-fit: cover;
 
     border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.25);
+
+    border:
+        3px solid
+        rgba(255,255,255,0.25);
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,0.45);
+        0 10px 35px
+        rgba(0,0,0,0.45);
 
     margin-bottom: 15px;
 }
 
+
 h1 {
-    margin: 5px 0;
+
+    margin:
+        5px 0 8px;
 
     font-size: 38px;
+
     letter-spacing: 1px;
 }
 
+
 .subtitle {
+
     color: #aeb8c7;
+
     font-size: 16px;
 }
 
-/* MAINTAINER */
 
 .maintainer {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -76,54 +128,81 @@ h1 {
     margin-top: 18px;
 
     color: #aeb8c7;
+
     font-size: 14px;
 }
 
+
 .dp {
+
     width: 34px;
+
     height: 34px;
 
     border-radius: 50%;
+
     object-fit: cover;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
 }
 
-/* CATEGORY GRID */
+
+/* =========================
+   CATEGORY GRID
+========================= */
 
 .categories {
+
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
-    gap: 18px;
+    gap: 20px;
 }
 
-/* CATEGORY CARD */
+
+/* =========================
+   CATEGORY CARD
+========================= */
 
 .category {
-    display: block;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 145px;
+
+    padding: 22px;
 
     text-decoration: none;
+
     color: white;
-
-    padding: 25px;
-
-    min-height: 125px;
 
     background:
         rgba(255,255,255,0.07);
 
     border:
-        1px solid rgba(255,255,255,0.11);
+        1px solid
+        rgba(255,255,255,0.11);
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     backdrop-filter: blur(14px);
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,0.20);
+        0 12px 35px
+        rgba(0,0,0,0.20);
 
     transition:
         transform 0.2s ease,
@@ -131,36 +210,110 @@ h1 {
         box-shadow 0.2s ease;
 }
 
+
 .category:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 
     background:
         rgba(255,255,255,0.12);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,0.35);
+        0 18px 40px
+        rgba(0,0,0,0.35);
 }
 
-.category-icon {
-    font-size: 30px;
-    margin-bottom: 12px;
+
+.category:active {
+
+    transform:
+        translateY(-1px);
 }
+
+
+/* =========================
+   COACHING LOGO
+========================= */
+
+.coaching-logo {
+
+    flex-shrink: 0;
+
+    width: 76px;
+
+    height: 76px;
+
+    object-fit: contain;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    padding: 8px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.25);
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.category-content {
+
+    min-width: 0;
+}
+
 
 .category-name {
-    font-size: 21px;
+
+    font-size: 22px;
+
     font-weight: bold;
 
     margin-bottom: 7px;
 }
 
+
 .category-description {
+
     font-size: 13px;
+
+    line-height: 1.5;
+
     color: #9da8ba;
 }
 
-/* FOOTER */
+
+.arrow {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #9fc5ff;
+
+    font-size: 20px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
+
     text-align: center;
 
     margin-top: 45px;
@@ -168,42 +321,85 @@ footer {
     color: #778194;
 
     font-size: 13px;
+
+    line-height: 1.6;
 }
 
-/* MOBILE */
 
-@media (max-width: 650px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
 
     body {
+
         padding:
             25px 15px;
     }
 
+
     h1 {
+
         font-size: 32px;
     }
 
+
     .categories {
+
         grid-template-columns: 1fr;
+
+        gap: 15px;
     }
+
 
     .category {
-        min-height: 110px;
+
+        min-height: 125px;
+
+        padding: 18px;
     }
+
+
+    .coaching-logo {
+
+        width: 65px;
+
+        height: 65px;
+    }
+
+
+    .category-name {
+
+        font-size: 20px;
+    }
+
+
+    .arrow {
+
+        right: 15px;
+    }
+
 }
 
+
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="container">
 
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <div class="header">
+
 
         <img
             src="./group.jpg"
@@ -211,9 +407,11 @@ footer {
             alt="EPCMS"
         >
 
+
         <h1>
             EPCMS
         </h1>
+
 
         <div class="subtitle">
             Qbanks / Tests
@@ -222,137 +420,196 @@ footer {
 
         <div class="maintainer">
 
+
             <img
                 src="./dp.jpg"
                 class="dp"
                 alt="Maintainer"
             >
 
+
             <span>
                 Maintained by @sadhu_4l
             </span>
 
+
         </div>
+
 
     </div>
 
 
 
-    <!-- CATEGORIES -->
+    <!-- =========================
+         COACHING CATEGORIES
+    ========================= -->
 
     <div class="categories">
 
 
-        <!-- DAMS -->
+        <!-- =====================
+             DAMS
+        ====================== -->
 
         <a
             href="./category.html?category=DAMS"
             class="category"
         >
 
-            <div class="category-icon">
-                📚
+
+            <img
+                src="./dams.png"
+                class="coaching-logo"
+                alt="DAMS"
+            >
+
+
+            <div class="category-content">
+
+
+                <div class="category-name">
+                    DAMS
+                </div>
+
+
+                <div class="category-description">
+                    DAMS Qbanks & Tests
+                </div>
+
+
             </div>
 
-            <div class="category-name">
-                DAMS
+
+            <div class="arrow">
+                →
             </div>
 
-            <div class="category-description">
-                DAMS Qbanks & Tests
-            </div>
 
         </a>
 
 
 
-        <!-- MARROW -->
+        <!-- =====================
+             MARROW
+        ====================== -->
 
         <a
             href="./category.html?category=MARROW"
             class="category"
         >
 
-            <div class="category-icon">
-                🧠
+
+            <img
+                src="./marrow.png"
+                class="coaching-logo"
+                alt="Marrow"
+            >
+
+
+            <div class="category-content">
+
+
+                <div class="category-name">
+                    Marrow
+                </div>
+
+
+                <div class="category-description">
+                    Marrow Qbanks & Tests
+                </div>
+
+
             </div>
 
-            <div class="category-name">
-                Marrow
+
+            <div class="arrow">
+                →
             </div>
 
-            <div class="category-description">
-                Marrow Qbanks & Tests
-            </div>
 
         </a>
 
 
 
-        <!-- PREPLADDER -->
+        <!-- =====================
+             PREPLADDER
+        ====================== -->
 
         <a
             href="./category.html?category=PREPLADDER"
             class="category"
         >
 
-            <div class="category-icon">
-                📝
+
+            <img
+                src="./prepladder.png"
+                class="coaching-logo"
+                alt="PrepLadder"
+            >
+
+
+            <div class="category-content">
+
+
+                <div class="category-name">
+                    PrepLadder
+                </div>
+
+
+                <div class="category-description">
+                    PrepLadder Qbanks & Tests
+                </div>
+
+
             </div>
 
-            <div class="category-name">
-                PrepLadder
+
+            <div class="arrow">
+                →
             </div>
 
-            <div class="category-description">
-                PrepLadder Qbanks & Tests
-            </div>
 
         </a>
 
 
 
-        <!-- CEREBELLUM -->
+        <!-- =====================
+             CEREBELLUM
+        ====================== -->
 
         <a
             href="./category.html?category=CEREBELLUM"
             class="category"
         >
 
-            <div class="category-icon">
-                🔬
+
+            <img
+                src="./cerebellum.png"
+                class="coaching-logo"
+                alt="Cerebellum"
+            >
+
+
+            <div class="category-content">
+
+
+                <div class="category-name">
+                    Cerebellum
+                </div>
+
+
+                <div class="category-description">
+                    Cerebellum Qbanks & Tests
+                </div>
+
+
             </div>
 
-            <div class="category-name">
-                Cerebellum
+
+            <div class="arrow">
+                →
             </div>
 
-            <div class="category-description">
-                Cerebellum Qbanks & Tests
-            </div>
-
-        </a>
-
-
-
-        <!-- COREBTR -->
-
-        <a
-            href="./category.html?category=COREBTR"
-            class="category"
-        >
-
-            <div class="category-icon">
-                ⚡
-            </div>
-
-            <div class="category-name">
-                CoreBTR
-            </div>
-
-            <div class="category-description">
-                CoreBTR Qbanks & Tests
-            </div>
 
         </a>
 
@@ -361,13 +618,15 @@ footer {
 
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         EPCMS • Qbanks / Tests
 
-        <br><br>
+        <br>
 
         Maintained by @sadhu_4l
 
@@ -376,5 +635,7 @@ footer {
 
 </div>
 
+
 </body>
+
 </html>
